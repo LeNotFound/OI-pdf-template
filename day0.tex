@@ -1,0 +1,269 @@
+\documentclass[UTF8,a4paper]{ctexart}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{xeCJK}
+\usepackage{CJK}     
+\usepackage{xeCJKfntef}                     
+\usepackage{fancyhdr}               
+\usepackage{graphicx}                 
+\usepackage{lastpage}    
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{layout}
+\usepackage{titletoc}
+\usepackage{listings}
+\usepackage{ulem}
+\usepackage{float}
+\usepackage[colorlinks,linkcolor=blue]{hyperref} 
+\newcommand\filename[1]{\emph{\textbf{#1}}}
+\newcommand\udot[1]{\textbf{\color{black}\CJKunderdot{\color{black}#1}}} % 第一个 color 调整加粗字体下着重号的颜色
+\newcommand\newprob[2]{
+    \newpage
+    \pagestyle{fancy}
+    \lhead{xxxxxxxx 赛} \rhead{#1（#2）}
+    \cfoot{第 \thepage 页 \qquad 共 \pageref{LastPage} 页}
+    \phantomsection
+    \addcontentsline{toc}{section}{#1（#2）}
+    \begin{center}
+        \LARGE
+        \textbf{#1}（#2）
+    \end{center}
+    \large
+    %
+    \textbf{【题目背景】}
+    \phantomsection
+    \addcontentsline{toc}{subsection}{【题目背景】}
+}
+\newcommand\para[1]{
+    $ $ \\ 
+    \textbf{【#1】}
+    \phantomsection
+    \addcontentsline{toc}{subsection}{【#1】}
+}
+\newcommand\sample[2]{
+    $ $ \\ 
+    \textbf{【样例} #1\textbf{#2】}
+    \phantomsection
+    \addcontentsline{toc}{subsection}{【样例 #1 #2】}
+}
+\lstset{
+    basicstyle={      
+        \color{black}
+        \fontspec{Consolas}
+    },
+    keywordstyle={
+        \color{blue}
+        \fontspec{Consolas}
+    },
+    numberstyle={
+        \color{black}
+        \textbf
+    },
+    rulecolor=\color{blue},
+    numbers=left,                               
+    frame=single,                            
+    frameround=tttt,
+    morekeywords={Sample, Input, Output},   % 可以手动添加关键字
+}
+\setmonofont{Consolas}
+\geometry{left=2.52cm,right=2.52cm,top=2.5cm,bottom=2.5cm}
+\begin{document}
+    \pagestyle{fancy}
+    \lhead{xxxxxxxx 赛} \rhead{}
+    \cfoot{第 \thepage 页 \qquad 共 \pageref{LastPage} \color{black} 页}
+    \thispagestyle{empty}
+    \addcontentsline{toc}{section}{注意事项}
+    \begin{center}
+        \Huge
+        \textbf{xxxxxxxx 赛}
+        \\
+        \Large 
+        命题人：ModCx \& LeNotFonud
+        \\
+        \Large
+        \textit{题面与评测负责人：ModCx}
+        \\
+        \Large
+        \textbf{时间：}2022\textbf{年}11\textbf{月}16\textbf{日} 15:40 $\sim$ 18:00
+        \\
+    \end{center}
+    \large
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{3.2cm}|p{3.2cm}|p{3.2cm}|}
+        \hline
+        题目名称 & 空岛生存 & 大整数加法 & 作弊者的归宿 \\
+        \hline
+        题目类型 & 传统型 & 传统型 & 传统型 \\
+        \hline
+        目录 & \texttt{survival} & \texttt{addition} & \texttt{pardon} \\
+        \hline
+        可执行文件名 & \texttt{survival} & \texttt{addition} & \texttt{pardon} \\
+        \hline
+        输入文件名 & \texttt{survival.in} & \texttt{addition.in} & \texttt{pardon.in} \\
+        \hline
+        输出文件名 & \texttt{survival.out} & \texttt{addition.out} & \texttt{pardon.out} \\
+        \hline
+        每个测试点时限 & 1.0 秒 & 1.0 秒 & 1.0 秒 \\
+        \hline
+        内存限制 & 256 MB & 256 MB & 256 MB \\
+        \hline
+        测试点数目 & 20 & 20 & 10 \\
+        \hline
+        测试点是否等分 & 是 & 是 & 是 \\
+        \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{3.2cm}|p{3.2cm}|p{3.2cm}|}
+        \hline
+        题目名称 & 陷阱 & 智慧殿堂 & 窗外的流星 \\
+        \hline
+        题目类型 & 传统型 & 传统型 & 传统型 \\
+        \hline
+        目录 & \texttt{trap} & \texttt{palace} & \texttt{meteor} \\
+        \hline
+        可执行文件名 & \texttt{trap} & \texttt{palace} & \texttt{meteor} \\
+        \hline
+        输入文件名 & \texttt{trap.in} & \texttt{palace.in} & \texttt{meteor.in} \\
+        \hline
+        输出文件名 & \texttt{trap.out} & \texttt{palace.out} & \texttt{meteor.out} \\
+        \hline
+        每个测试点时限 & 1.0 秒 & 1.0 秒 & 1.0 秒 \\
+        \hline
+        内存限制 & 512 MB & 512 MB & 128 MB \\
+        \hline
+        测试点数目 & 60 & 30 &30 \\
+        \hline
+        测试点是否等分 & 否 & 是 & 是 \\
+        \hline
+        \end{tabular}
+    \end{center}
+提交源程序文件名
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{3.2cm}|p{3.2cm}|p{3.2cm}|}
+        \hline
+        对于 C++ \  语言 & \texttt{survival.cpp} & \texttt{addition.cpp} & \texttt{pardon.cpp} \\
+        \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        \begin{tabular}{|p{4cm}|p{3.2cm}|p{3.2cm}|p{3.2cm}|}
+        \hline
+        对于 C++ \  语言 & \texttt{trap.cpp} & \texttt{palace.cpp} & \texttt{meteor.cpp} \\
+        \hline
+        \end{tabular}
+    \end{center}
+编译选项
+    \begin{center}
+        \begin{tabular}{|p{3.1cm}|p{11.2cm}<\centering|}
+        \hline
+        对于 C++ \ 语言 & \texttt{-lm -O2 -std=c++17} \\
+        \hline
+        \end{tabular}
+    \end{center}
+    \textbf{注意事项与提醒（请选手务必仔细阅读）} 
+    \\
+    \indent
+    1. 文件名（程序名和输入输出文件名）必须使用英文小写。\par
+    2. C++ 中函数 main() 的返回值类型必须是 int，程序正常结束时的返回值必须是 0。\par
+    3. 提交的程序代码文件的放置位置请参照具体要求。\par
+    4. 因违反以上三点而出现的错误或问题，申诉时一律不予受理。\par
+    5. 若无特殊说明，结果的比较方式为全文比较（过滤行末空格及文末回车）。\par
+    6. 程序可使用的栈内存空间限制与题目的内存限制一致。\par
+    7. 若无特殊说明，每道题的 \textbf{代码大小限制为} 100KB，输入与输出中同一行的相邻整数、字符串等均使用一个空格分隔，结果比较方式为全文比较（忽略行末空格、文末回车）。\par
+    8. 选手不得使用 SSH 等命令。\par
+    9. 选手不得使用内嵌汇编，\#pragma 等指令。\par
+    10. 评测时采用的机器配置为： Intel Xeon Silver 4210 CPU 2.20GHz，内存 32G，上述时限以此配置为准。\par
+    11. 特别提醒：评测在 Windows 10 下进行。\par
+    12. 从 PDF 复制的样例带有行号，建议直接使用样例文件。\par
+    13. 提交的代码中请勿包含 \verb|system("pause")| 等语句，否则可能导致评测出错。
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newprob{空岛生存}{survival} \\ \indent
+
+LeNotFound 在玩空岛生存，他需要从一个岛搭方块到另一个岛，为了防止刷怪，他选择用半砖搭路。
+
+但是他记错了攻略，搭的全都是上半砖，还是会刷怪。
+
+\para{题目描述} \\ \indent
+
+他希望快速地把所有的上半砖换成下半砖，但是拆了重新搭太麻烦了，于是他想起了\verb|Debug Stick|(\sout{LeNotFound太菜了不会 fill 指令})，右键方块可以改变物品状态。  
+
+一次操作可以使：
+
+    上半砖 -> 下半砖  
+
+    下半砖 -> 上半砖  
+
+(箭头表示转换，与游戏内实际情况有出入，请以题面描述为准)  
+
+由于路太长，所以他疾跑 + 跳跃疯狂点击右键想把所有半砖都改成下半砖，但遗漏了好多，也有些半砖被点了偶数次。  
+
+看着参差不齐的路他没办法了，所以他找到了你。
+
+~\
+
+\verb|bottom| 表示下半砖，\verb|top| 表示上半砖。
+
+用一整行若干个字符串描述这条路径，你可以进行如下两种操作：
+
+\begin{itemize}
+    \item \textbf{操作 $1$} 按住右键沿着这条路走一遍，使每个方块翻转\textbf{一次}
+    \item \textbf{操作 $2$} 点击一个上半砖，使它变为下半砖  
+\end{itemize}
+
+你能否在只进行 \textbf{不超过} $K$ 次操作 $2$ 的情况下把路修整好？如果能输出 \verb|Yes| 否则输出 \verb|No|。
+
+\para{输入格式} \\ \indent
+
+从文件 \filename{survival.in} 中读入数据。 \par
+第 \verb|1| 行一个整数 $K$  \par
+第 \verb|2| 行一行若干个字符串，表示路上各个方块的状态。
+
+\para{输出格式} \\ \indent
+
+输出到文件 \filename{survival.out} 中。 \par
+一行一个字符串，表示是否可以完成相应操作，如果能输出 \verb|Yes| 否则输出 \verb|No|。
+
+\sample{1}{输入}
+\begin{lstlisting}
+1
+top bottom top
+\end{lstlisting}
+
+\sample{1}{输出}
+\begin{lstlisting}
+Yes
+\end{lstlisting}
+
+\sample{2}{输入}
+\begin{lstlisting}[breaklines,columns=flexible]
+13
+top bottom bottom top top top top bottom bottom top top top top bottom bottom top bottom bottom top bottom bottom top bottom bottom top bottom bottom top bottom bottom top top bottom top bottom top bottom bottom top top 
+\end{lstlisting}
+
+\sample{2}{输出}
+\begin{lstlisting}
+No
+\end{lstlisting}
+
+\sample{3}{} \\ \indent
+
+见选手目录下的 \filename{survival/survival3.in} 与 \filename{survival/survival3.ans}。
+
+\sample{3}{} \\ \indent
+
+见选手目录下的 \filename{survival/survival4.in} 与 \filename{survival/survival4.ans}。
+
+\para{数据范围} \\ \indent
+
+% \begin{center}
+    对于 $25\%$ 的数据，保证输入字符串长度小于 $100$\\
+    \indent
+    对于 $100\%$ 的数据，保证输入字符串长度小于 $1000000$
+% \end{center}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
